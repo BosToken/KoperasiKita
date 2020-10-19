@@ -1,6 +1,4 @@
-<head>
-    <title>@yield('title')</title>
-<body>
+  <title>@yield('title')</title>
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <a class="navbar-brand disable" href="{{url('/')}}">Title App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,5 +30,3 @@
 <!-- jQuery and JS bundle w/ Popper.js -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap"></script>
-</body>
-</html>
