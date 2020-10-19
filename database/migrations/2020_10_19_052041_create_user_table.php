@@ -20,6 +20,7 @@ class CreateUserTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('img_url')->nullable();
+            $table->string('role_id');
             $table->timestamps();
         });
     }

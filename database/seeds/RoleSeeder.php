@@ -15,12 +15,10 @@ class RoleSeeder extends Seeder
         DB::table('roles')->insert([
             'id' => '1',
             'name' => 'Admin',
-            'power' => 'Yes',
         ]);
         DB::table('roles')->insert([
             'id' => '2',
             'name' => 'User',
-            'power' => 'No',
         ]);
     }
 }

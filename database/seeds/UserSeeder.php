@@ -18,7 +18,8 @@ class UserSeeder extends Seeder
             'contact' => '+6181232857502',
             'email' => 'admin@gmail.com',
             'password' => 'test',
-            'img_url' => 'https://www.generasia.com/w/images/c/c5/Sayuri_-_Koukai_no_Uta_promo.jpg'
+            'img_url' => 'https://www.generasia.com/w/images/c/c5/Sayuri_-_Koukai_no_Uta_promo.jpg',
+            'role_id' => '1'
         ]);
         DB::table('users')->insert([
             'id' => '2',
@@ -26,7 +27,8 @@ class UserSeeder extends Seeder
             'contact' => '+6181232857501',
             'email' => 'user@gmail.com',
             'password' => 'test',
-            'img_url' => 'https://owldb.net/wp-content/uploads/2019/02/Minami-300x300.jpg'
+            'img_url' => 'https://owldb.net/wp-content/uploads/2019/02/Minami-300x300.jpg',
+            'role_id' => '2'
         ]);
     }
 }
