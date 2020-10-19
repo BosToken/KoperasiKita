@@ -27,6 +27,8 @@ Login
     <button type="button" class="btn btn-outline-info w-25 p-3" data-toggle="modal" data-target="#register">Register</button>
 </center>
 
+<form action="{{url('/login/check')}}" method="POST">
+    {{ csrf_field() }}
   <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -37,17 +39,45 @@ Login
           </button>
         </div>
         <div class="modal-body">
-          ...
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        Email
+                        <input name="email" type="email" class="form-control" placeholder="Email" value="{{ old('email') }}"required>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        Password
+                        <input name="password" type="password" class="form-control" placeholder="Password" value="{{ old('password') }}" required>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
+</form>
 
   <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <form action="{{url('/register')}}" method="POST">
+    {{ csrf_field() }}
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -57,14 +87,46 @@ Login
           </button>
         </div>
         <div class="modal-body">
-          ...
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        Username
+                        <input name="username" type="username" class="form-control" placeholder="Username" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        Contact(Number Only)
+                        <input id = " contact" name="contact" type="number" class="form-control" placeholder="Contact" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        Email
+                        <input name="email" type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        Password
+                        <input name="password" type="password" class="form-control" placeholder="Password" required>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
-  </div>
+</form>
+</div>
 
 @include('partials.footer')
