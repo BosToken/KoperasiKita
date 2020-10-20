@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('login', 'UserController@login');
 Route::post('register', 'UserController@store');
 Route::post('login/check', 'UserController@check');
+
+Route::get('user/dashboard', 'UserController@dashboard');

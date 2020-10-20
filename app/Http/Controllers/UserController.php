@@ -11,7 +11,7 @@ use Session;
 class UserController extends Controller
 {
     public function login(){
-        return view('login.login');
+        return view('login');
     }
     public function store(Request $request)
     {
@@ -45,28 +45,38 @@ class UserController extends Controller
             return redirect('/user/dashboard');
         }
     }
-    public function check (Request $req) {
-            $this->validate($req,[
-                'email'=>'required',
-                'password'=>'required'
-            ]);
-            $proses=User::where('email',$req->email)->where('password',md5($req->password));
-        if($proses->count()>0){
-            $data=$proses->first();
-            Session::put('id',$data->id);
-            Session::put('email',$data->email);
-            Session::put('contact',$data->contact);
-            Session::put('username',$data->username);
-            Session::put('img_url',$data->img_url);
-            Session::put('password',$data->password);
-            Session::put('role_id',$data->role_id);
-            Session::put('login_status',true);
+    public function check (Request $request) {
+        $data = User::where('email',$request->email)->where('password',$request->password)->first();
+        if($data) {
+            $request->session()->put('logged_in', true);
+            $request->session()->put('user', $data);
+            $request->session()->put('role', User::find($data->id)->first());
             return redirect('/user/dashboard');
-        }else{
-            Session::flash('alert_message','Email dan Password Anda Tidak Cocok');
-            return redirect('login');
         }
-        
+           else {
+            return redirect('/login');
+        }
 
-}
+        // $this->validate($request, [
+        //     'email'=>'required',
+        //     'password'=>'required'
+        // ]);
+        // $procces = User::where('email', $request->email)->where('password', $request->password)->first();
+        // if(count($procces)>0){
+        //     Session::put('id',$procces->id);
+        //     Session::put('username',$procces->username);
+        //     Session::put('contact',$procces->contact);
+        //     Session::put('email',$procces->emailv);
+        //     Session::put('password',$procces->password);
+        //     Session::put('img_url',$procces->img_url);
+        //     return redirect('/user/dashboard');
+        // }
+        // else{
+        // return redirect('/login');
+        // }
+    }
+    public function dashboard(){
+        $user = Session::get('user');
+        return view('user.dashboard', compact('user'));
+    }
 }
