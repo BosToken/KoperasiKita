@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
-use Illuminate\Contracts\Session\Session;
+use Validator;
+use Session;
 
 class UserController extends Controller
 {
     public function login(){
-        return view('login');
+        return view('login.login');
     }
     public function store(Request $request)
     {
@@ -22,10 +23,10 @@ class UserController extends Controller
         $cekData = User::where('email', $request->email)->exists();
 
         if ($cekData) {
-            return redirect('/login')->with('gagal', 'Email Has Been Registered');
+            return redirect('login')->with('gagal', 'Email Has Been Registered');
         }
         if ($password !== $password) {
-            return redirect('/login');
+            return redirect('login');
         } else {
             $user = new User();
             $user->email = $email;
@@ -44,27 +45,28 @@ class UserController extends Controller
             return redirect('/user/dashboard');
         }
     }
-    public function check (Request $request) {
-            $this->validate($request,[
+    public function check (Request $req) {
+            $this->validate($req,[
                 'email'=>'required',
                 'password'=>'required'
             ]);
-            $proses = User::where('username', $request->username)->where('password', $request->password)->first();
-            if($proses){
-                Session::put('id', $proses->id);
-                Session::put('username', $proses->username);
-                Session::put('contact', $proses->contact);
-                Session::put('email', $proses->email);
-                Session::put('password', $proses->password);
-                Session::put('img_url', $proses->img_url);
-                Session::put('role_id', $proses->role_id);
-                Session::put('status', true);
-                return redirect('/user/dashboard');
-            }
-            else{
-                Session::flush();
-                return redirect('/login');
-            }
+            $proses=User::where('email',$req->email)->where('password',md5($req->password));
+        if($proses->count()>0){
+            $data=$proses->first();
+            Session::put('id',$data->id);
+            Session::put('email',$data->email);
+            Session::put('contact',$data->contact);
+            Session::put('username',$data->username);
+            Session::put('img_url',$data->img_url);
+            Session::put('password',$data->password);
+            Session::put('role_id',$data->role_id);
+            Session::put('login_status',true);
+            return redirect('/user/dashboard');
+        }else{
+            Session::flash('alert_message','Email dan Password Anda Tidak Cocok');
+            return redirect('login');
         }
+        
 
+}
 }

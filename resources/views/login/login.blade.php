@@ -16,7 +16,7 @@ Login
 </div>
 
 <center>
-<button type="button" class="btn btn-outline-success w-25 p-3" data-toggle="modal" data-target="#login">Login</button>
+<button type="button" class="btn btn-outline-success w-25 p-3" data-toggle="modal" data-target="#login">LOGIN</button>
 </center>
 
 <div class="w-auto p-5">
@@ -24,7 +24,7 @@ Login
 </div>
 
 <center>
-    <button type="button" class="btn btn-outline-info w-25 p-3" data-toggle="modal" data-target="#register">Register</button>
+    <button type="button" class="btn btn-outline-info w-25 p-3" data-toggle="modal" data-target="#register">REGISTER</button>
 </center>
 
 <form action="{{url('/login/check')}}" method="POST">
@@ -33,10 +33,10 @@ Login
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">User Login</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <h3 class="modal-title w-80 dark-grey-text my-3" id="myModalLabel"><strong>LOGIN</strong></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         </div>
         <div class="modal-body">
             <div class="row">
@@ -66,10 +66,9 @@ Login
                 </div>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
+        <div class="modal-footer mx-5 pt-3 mb-1">
+        <button type="submit" class="btn btn-primary">LOGIN</button>
+      </div>
       </div>
     </div>
   </div>
@@ -99,7 +98,7 @@ Login
                 <div class="col-md-12">
                     <div class="form-group">
                         Contact(Number Only)
-                        <input id = " contact" name="contact" type="number" class="form-control" placeholder="Contact" required>
+                        <input id = "contact" name="contact" type="number" class="form-control" placeholder="Contact" required>
                     </div>
                 </div>
             </div>
@@ -120,10 +119,9 @@ Login
                 </div>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
+        <div class="modal-footer mx-5 pt-3 mb-1">
+        <button type="submit" class="btn btn-primary">REGISTER</button>
+      </div>
       </div>
     </div>
 </form>
