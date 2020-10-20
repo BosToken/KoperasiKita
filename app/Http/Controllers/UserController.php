@@ -75,8 +75,19 @@ class UserController extends Controller
         // return redirect('/login');
         // }
     }
+
+    public function logout() {
+        Session::flush();
+        return redirect('/login');
+    }
+
     public function dashboard(){
         $user = Session::get('user');
         return view('user.dashboard', compact('user'));
+    }
+    
+    public function index(){
+        $user = Session::get('user');
+        return view('welcome', compact('user'));
     }
 }

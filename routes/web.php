@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UserController@index');
 
 //LOGIN//
 Route::get('login', 'UserController@login');
+Route::get('logout', 'UserController@logout');
+
 Route::post('register', 'UserController@store');
 Route::post('login/check', 'UserController@check');
 

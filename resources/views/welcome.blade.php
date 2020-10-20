@@ -9,6 +9,7 @@ Welcome
         <div class="card-body">
             <h1 class="card-title">Welcome
                 @if(Session::get('logged_in'))
+                {{$user->username}}
                 @else
                 Guest
                 @endif
