@@ -1,25 +1,23 @@
-@include('partials.navbar')
-
-@section('tab-title')
-Welcome
-@endsection
+@extends('partials.navbar')
+@section('title', 'Koperasi Z')
+@section('content')
 
 <head>
     <div class="card text-center">
         <div class="card-body">
-            <h1 class="card-title">Welcome
+            <h1 class="card-title">WELCOME
                 @if(Session::get('logged_in'))
                 {{$user->username}}
                 @else
-                Guest
+                GUEST
                 @endif
             </h1>
-            <p class="card-text">Thanks Support My Web Site.</p>
+            <p class="card-text">THANKS SUPPORT MY WEBSITE.</p>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username"
+                <input type="text" class="form-control" placeholder="SEARCH" aria-label="Recipient's username"
                     aria-describedby="button-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">SEARCH</button>
                 </div>
             </div>
         </div>
@@ -27,7 +25,7 @@ Welcome
     <div class="card text-center">
         <div class="card-header">
             <h3>
-                <div class="text-muted"> Need Help? </div>
+                <div class="text-muted"> NEED HELP ?</div>
             </h3>
         </div>
     </div>
@@ -35,4 +33,4 @@ Welcome
     </div>
 </head>
 
-@include('partials.footer')
+@stop

@@ -23,3 +23,10 @@ Route::post('register', 'UserController@store');
 Route::post('login/check', 'UserController@check');
 
 Route::get('user/dashboard', 'UserController@dashboard');
+Route::get('user/dictionary', 'DictionaryController@index');
+Route::get('user/journal', 'JournalController@index');
+Route::get('user/profile', 'UserController@profile');
+Route::delete('user/destroy-account/{id}', 'UserController@destroy');
+
+Route::get('admin/dashboard', 'AdminController@dashboard');
+

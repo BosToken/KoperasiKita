@@ -56,24 +56,6 @@ class UserController extends Controller
            else {
             return redirect('/login');
         }
-
-        // $this->validate($request, [
-        //     'email'=>'required',
-        //     'password'=>'required'
-        // ]);
-        // $procces = User::where('email', $request->email)->where('password', $request->password)->first();
-        // if(count($procces)>0){
-        //     Session::put('id',$procces->id);
-        //     Session::put('username',$procces->username);
-        //     Session::put('contact',$procces->contact);
-        //     Session::put('email',$procces->emailv);
-        //     Session::put('password',$procces->password);
-        //     Session::put('img_url',$procces->img_url);
-        //     return redirect('/user/dashboard');
-        // }
-        // else{
-        // return redirect('/login');
-        // }
     }
 
     public function logout() {
@@ -85,6 +67,7 @@ class UserController extends Controller
         $user = Session::get('user');
         return view('user.dashboard', compact('user'));
     }
+    
     
     public function index(){
         $user = Session::get('user');
