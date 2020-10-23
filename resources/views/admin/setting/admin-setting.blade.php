@@ -251,6 +251,7 @@
                         <input id="img_url" name="img_url" for="img_url" type="text" class="form-control" value="{{$settings->img_url}}"
                             placeholder="{{$settings->img_url}}">
                     </div>
+                    <img src="{{$settings->img_url}}" class="rounded float-left" alt="{{$settings->img_url}}" style="width: 100px; height: 100px;">
 
                     <div class="panel-footer text-right">
                         <button type="submit" class="btn btn-outline-success"><i class="fa fa-save"></i> Save</button>
