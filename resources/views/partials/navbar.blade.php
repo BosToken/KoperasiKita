@@ -1,8 +1,8 @@
   <title>@yield('title')</title>
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow">
     <!-- Brand/logo -->
     <div class="container">
-    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="INI LOGO" style="width: 100px; height: 50px;"></i></a>
+    <a class="navbar-brand" href="{{url('/')}}">App Title</a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
       <!-- Links -->
       <ul class="navbar-nav ml-auto" style="font-family: Arial, Helvetica, sans-serif; font-size: larger; color:white;">
         <li class="nav-item">
-          <a class="nav-link active" href="{{url('/home')}}">HOME</a>
+          <a class="nav-link active" href="{{url('/')}}">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{url('/login')}}">LOGIN</a>

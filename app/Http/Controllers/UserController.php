@@ -73,4 +73,15 @@ class UserController extends Controller
         $user = Session::get('user');
         return view('welcome', compact('user'));
     }
+
+    public function profile(){
+        $user = Session::get('user');
+        return view('user.profile', compact('user'));
+    }
+
+    public function destroy($id)
+    {
+        User::find($id)->delete();
+        return redirect('/logout');
+    }
 }

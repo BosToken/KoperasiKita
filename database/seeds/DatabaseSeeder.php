@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DictionarySeeder::class);
         $this->call(JournalSeeder::class);
         $this->call(CoaSeeder::class);
+        $this->call(AdminSettingSeeder::class);
     }
 }

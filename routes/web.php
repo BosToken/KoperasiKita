@@ -29,4 +29,7 @@ Route::get('user/profile', 'UserController@profile');
 Route::delete('user/destroy-account/{id}', 'UserController@destroy');
 
 Route::get('admin/dashboard', 'AdminController@dashboard');
+Route::get('admin/coa', 'AdminController@coa');
+
+Route::get('admin/admin/setting', 'AdminController@adminSetting');
 

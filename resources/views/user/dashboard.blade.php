@@ -1,8 +1,4 @@
 @include('partials.user.navbar')
+<title>Dashboard</title>
 
-Hallo
-{{-- @foreach($user as $users)
-{{$users->id}}
-@endforeach --}}
-
-{{$user->username}}
+@include('partials.user.page')

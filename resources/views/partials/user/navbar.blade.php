@@ -19,10 +19,10 @@
 <body>
 @if($user->role_id === "1")
     <title>@yield('title')</title>
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow">
     <!-- Brand/logo -->
     <div class="container">
-    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="INI LOGO" style="width: 100px; height: 50px;"></i></a>
+    <a class="navbar-brand" href="/">App Title</a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -47,6 +47,7 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
             <div class="topbar-divider d-none d-sm-block"></div>
+            <img src="{{$user->img_url}}" alt="{{$user->img_url}}" style="width: 50px; height: 50px;"></i>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
@@ -108,72 +109,92 @@
 
   
   @else
-    <title>@yield('title')</title>
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <a class="navbar-brand disable " href="{{url('/')}}">Title App</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+  <title>@yield('title')</title>
+  <nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow">
+  <!-- Brand/logo -->
+  <div class="container">
+  <a class="navbar-brand" href="/">App Title</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto" style="font-family: Arial, Helvetica, sans-serif; font-size: larger; color:white;">
+      <li class="nav-item">
+        <a class="nav-link active" href="{{url('/knowledge')}}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('/knowledge')}}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('/knowledge')}}">Knowledge</a>
+      </li>
+    </ul>
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <i class="fa fa-bars"></i>
         </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">
-        <li class="nav-item">
-          <a class="nav-link active" href="{{url('/knowledge')}}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{url('/knowledge')}}">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{url('/knowledge')}}">Knowledge</a>
-        </li>
-      </ul>
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
 
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-            <div class="topbar-divider d-none d-sm-block"></div>
+        <!-- Topbar Navbar -->
+        <ul class="navbar-nav ml-auto">
+          <div class="topbar-divider d-none d-sm-block"></div>
+          <img src="{{$user->img_url}}" alt="{{$user->img_url}}" style="width: 50px; height: 50px;"></i>
 
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                {{$user->username}}
+          <!-- Nav Item - User Information -->
+          <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+              {{$user->username}}
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="{{url('/logout')}}" data-toggle="modal" data-target="#logoutModal">
+                Logout
               </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{url('/logout')}}" data-toggle="modal" data-target="#logoutModal">
-                  LOGOUT
-                </a>
-              </div>
-            </li>
+            </div>
+          </li>
 
-          </ul>
-        </div>
-      </nav>
+        </ul>
+  </div>
+</div>
+</nav>
 
-        <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Bersedia untuk keluar?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Apakah anda ingin keluar?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="{{url('/logout')}}">Logout</a>
-        </div>
+      <!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bersedia untuk keluar ?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Apakah Anda ingin keluar?</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="{{url('/logout')}}">Logout</a>
       </div>
     </div>
   </div>
-        
-</body>
+</div>
+   <!-- <mdb-navbar-nav right>
+
+      <mdb-dropdown>
+          <mdb-dropdown-toggle slot="toggle" navlink tag="li" class="nav-item avatar" waves-fixed>
+              <mdb-icon icon="user-circle" v-if="!loggedIn"/>
+              <mdb-avatar v-else>
+                  <img alt="{{$user->img_url}}" class="rounded-circle" src="{{$user->img_url}}" style="width: 45px;"/>
+              </mdb-avatar>
+          </mdb-dropdown-toggle>
+          <mdb-dropdown-menu>
+              <mdb-dropdown-item :to="{ name: 'profile' }" v-if="loggedIn">{{$user->username}}</mdb-dropdown-item>
+              <a href="{{url('/admin/dashboard')}}" class="btn btn-success">ADMIN PANEL</a>
+              <a href="{{url('/logout')}}" class="btn btn-danger">LOG OUT</a>
+
+          </mdb-dropdown-menu>
+      </mdb-dropdown>
+
+  </mdb-navbar-nav> -->
 
   
   @endif
