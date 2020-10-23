@@ -19,7 +19,7 @@
   <!-- <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div> -->
-  <div class="sidebar-brand-text mx-3">App Title</div>
+  <div class="sidebar-brand-text mx-3">@foreach($setting as $settings){{$settings->app_title}}@endforeach</div>
 </a>
 
 <!-- Divider -->
@@ -130,6 +130,7 @@
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
 
+
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">
   <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -140,9 +141,11 @@
 
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
+  
 
 <!-- Main Content -->
 <div id="content">
+  
 
   <!-- Topbar -->
   <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -156,6 +159,7 @@
       <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
+          
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto ">
@@ -180,6 +184,7 @@
     </div>
   </div>
   </nav>
+  
   
         <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

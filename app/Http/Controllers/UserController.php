@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AdminSetting;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
@@ -11,7 +12,8 @@ use Session;
 class UserController extends Controller
 {
     public function login(){
-        return view('login');
+        $setting = AdminSetting::get();
+        return view('login', compact('setting'));
     }
     public function store(Request $request)
     {
@@ -65,18 +67,21 @@ class UserController extends Controller
 
     public function dashboard(){
         $user = Session::get('user');
-        return view('user.dashboard', compact('user'));
+        $setting = AdminSetting::get();
+        return view('user.dashboard', compact('user', 'setting'));
     }
     
     
     public function index(){
         $user = Session::get('user');
-        return view('welcome', compact('user'));
+        $setting = AdminSetting::get();
+        return view('welcome', compact('user', 'setting'));
     }
 
     public function profile(){
         $user = Session::get('user');
-        return view('user.profile', compact('user'));
+        $setting = AdminSetting::get();
+        return view('user.profile', compact('user', 'setting'));
     }
 
     public function destroy($id)

@@ -32,4 +32,5 @@ Route::get('admin/dashboard', 'AdminController@dashboard');
 Route::get('admin/coa', 'AdminController@coa');
 
 Route::get('admin/admin/setting', 'AdminController@adminSetting');
+Route::put('admin/admin/setting/update/{id}', 'AdminController@updateadmin');
 

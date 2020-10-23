@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow">
     <!-- Brand/logo -->
     <div class="container">
-    <a class="navbar-brand" href="/">App Title</a>
+    <a class="navbar-brand" href="{{url('/')}}">@foreach($setting as $settings){{$settings->app_title}}@endforeach</a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -113,7 +113,7 @@
   <nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow">
   <!-- Brand/logo -->
   <div class="container">
-  <a class="navbar-brand" href="/">App Title</a>
+  <a class="navbar-brand" href="{{url('/')}}">@foreach($setting as $settings){{$settings->app_title}}@endforeach</a>
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>

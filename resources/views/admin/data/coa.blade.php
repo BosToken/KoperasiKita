@@ -1,33 +1,23 @@
 @extends('partials.admin.sidebar')
 <title>Chart Of Account</title>
 
-<table class="table d-inline-block">
+<div class="container">
+<table class="table fixed-bottom">
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Title</th>
+        <th scope="col">Code</th>
       </tr>
     </thead>
     <tbody>
+      @foreach($coa as $coas)
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row"></th>
+        <td>{{$coas->title}}</td>
+        <td>{{$coas->code}}</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      @endforeach
     </tbody>
   </table>
+</div>
