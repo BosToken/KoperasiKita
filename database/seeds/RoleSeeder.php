@@ -15,10 +15,14 @@ class RoleSeeder extends Seeder
         DB::table('roles')->insert([
             'id' => '1',
             'name' => 'Admin',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('roles')->insert([
             'id' => '2',
             'name' => 'User',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
     }
 }

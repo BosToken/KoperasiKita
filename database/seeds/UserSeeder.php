@@ -19,7 +19,9 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => 'admin',
             'img_url' => 'https://www.generasia.com/w/images/c/c5/Sayuri_-_Koukai_no_Uta_promo.jpg',
-            'role_id' => '1'
+            'role_id' => '1',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'id' => '2',
@@ -28,7 +30,9 @@ class UserSeeder extends Seeder
             'email' => 'user@gmail.com',
             'password' => 'user',
             'img_url' => 'https://owldb.net/wp-content/uploads/2019/02/Minami-300x300.jpg',
-            'role_id' => '2'
+            'role_id' => '2',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
     }
 }
