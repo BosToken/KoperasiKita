@@ -1,0 +1,49 @@
+body{
+    background:#f9f9fb;    
+    }
+    .view-account{
+    background:#FFFFFF; 
+    margin-top:20px;
+    }
+    .view-account #pro-label {
+    font-size: 13px;
+    position: relative;
+    top: -10px;
+    margin-left: 10px;
+    display: inline-block
+    }
+    
+    .view-account .content-panel {
+    padding: 30px
+    }
+    
+    .view-account .content-panel .title {
+    margin-bottom: 15px;
+    margin-top: 0;
+    font-size: 18px
+    }
+    
+    .view-account .content-panel .fieldset-title {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eaeaf1;
+    margin-bottom: 30px;
+    color: #616670;
+    font-size: 16px
+    }
+    
+    .view-account .content-panel .avatar .figure img {
+    float: right;
+    width: 64px
+    }
+    
+    .view-account .content-panel .content-header-wrapper {
+    position: relative;
+    margin-bottom: 30px
+    }
+    
+    .view-account .content-panel .content-header-wrapper .actions {
+    position: absolute;
+    right: 0;
+    top: 0
+    }
+    

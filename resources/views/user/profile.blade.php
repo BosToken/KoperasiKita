@@ -1,6 +1,6 @@
 @extends('partials.user.page')
 @section('title', 'Profile - Koperasi Z')
-@section('content')
+@section('container')
 
 
 <div class="card" style="width: 1300px; height: 650px;">

@@ -8,7 +8,7 @@
 
 @extends('partials.user.page')
 @section('title', 'Journal - Koperasi Z')
-@section('content')
+@section('container')
 
 
 <table class="table " style="width: 1300px; height: 640px;">

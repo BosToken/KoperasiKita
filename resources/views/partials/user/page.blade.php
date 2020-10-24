@@ -92,26 +92,7 @@
     </div>
   </div>
   </nav>
-  
-        <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Bersedia untuk keluar ?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Apakah Anda ingin keluar?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="{{url('/logout')}}">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+
   @else
   <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
   <!-- Brand/logo -->
@@ -163,8 +144,15 @@
   </div>
 </div>
 </nav>
+  @endif
 
-      <!-- Logout Modal-->
+  <div class="container-fluid">
+  <div class="row">
+  @yield('container')
+  </div>
+  </div>
+
+        <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -182,16 +170,10 @@
     </div>
   </div>
 </div>
-  @endif
-        @yield('content')
-      </div>
+    </div>
 		</div>
 
 
-
-
-
-@yield('content')
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">

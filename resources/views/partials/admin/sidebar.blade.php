@@ -1,10 +1,14 @@
-<!-- LINK -->
+<html>
+<head>
 
+<title>@yield('title')</title>
+
+<!-- LINK -->
 <link href="{{ url('tmp/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="{{ url('tmp/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
-  <link href="{{ url('tmp/css/sb-admin-2.min.css')}}" rel="stylesheet">
+</head>
 
 <body id="page-top">
 
@@ -42,8 +46,7 @@
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/admin/admin/setting')}}">Admin Setting </a>
-    </div>
-    <div class="bg-white py-2 collapse-inner rounded">
+
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/admin/user/setting')}}">User Setting</a>
     </div>
@@ -58,36 +61,22 @@
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     
     <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header"></h6>
-      <a class="collapse-item" href="{{url('/admin/dashboard')}}">Dashboard</a>
-    </div>
 
-    <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/admin/coa')}}">Coa [Chart Of Account]</a>
-    </div>
 
-    <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/admin/dictionary')}}">Dictionary</a>
-    </div>
 
-    <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/admin/journal')}}">Journal</a>
-    </div>
 
-    <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/admin/system-log')}}">System Log</a>
-    </div>
 
-    <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/admin/post')}}">Post</a>
-    </div>
 
-    <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/admin/transaction')}}">Transaction</a>
     </div>
@@ -105,19 +94,13 @@
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/user/dashboard')}}">User Dashboard </a>
-    </div>
 
-    <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/user/dashboard')}}">User Dictionary</a>
-    </div>
 
-    <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/user/journal')}}">User Journal</a>
-    </div>
 
-    <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/user/profile')}}">User Profile</a>
     </div>
@@ -127,49 +110,38 @@
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
-
-
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">
   <button class="rounded-circle border-0" id="sidebarToggle"></button>
 </div>
 
 </ul>
-<!-- End of Sidebar -->
 
-<!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
-  
 
-<!-- Main Content -->
 <div id="content">
   
-
-  <!-- Topbar -->
   <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-    <!-- Brand/logo -->
+
     <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <!-- Links -->
+
       <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          
 
-          <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto ">
             <div class="topbar-divider d-none d-sm-block"></div>
 
-            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
                 {{$user->username}}
               </a>
-              <!-- Dropdown - User Information -->
+
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 
                 <a class="dropdown-item" href="{{url('/logout')}}" data-toggle="modal" data-target="#logoutModal">
@@ -183,6 +155,9 @@
   </div>
   </nav>
   
+  <div class="container-fluid">
+  @yield('container')
+  </div>
   
         <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -204,12 +179,8 @@
   </div>
 
   </div>
-    <!-- End of Content Wrapper -->
 
   </div>
-  <!-- End of Page Wrapper -->
-
-  </body>
 
   <!-- SCRIPT -->
   <script src="{{ url('tmp/vendor/jquery/jquery.min.js') }}"></script>
@@ -227,5 +198,7 @@
   <!-- Page level custom scripts -->
   <script src="{{ url('tmp/js/demo/chart-area-demo.js') }}"></script>
   <script src="{{ url('tmp/js/demo/chart-pie-demo.js') }}"></script>
+  </body>
+  </html>
 
   
