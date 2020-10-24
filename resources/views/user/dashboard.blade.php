@@ -1,4 +1,4 @@
-@include('partials.user.navbar')
-<title>Dashboard</title>
-
-@include('partials.user.page')
+@extends('partials.user.page')
+@section('title', 'Dashboard - Koperasi Z')
+@section('content')
+@stop

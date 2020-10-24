@@ -1,8 +1,7 @@
-@include('partials.user.navbar')
-<title>Profile</title>
+@extends('partials.user.page')
+@section('title', 'Profile - Koperasi Z')
+@section('content')
 
-<div class="form-inline">
-@include('partials.user.page')
 
 <div class="card" style="width: 1300px; height: 650px;">
     <ul class="list-group list-group-flush">
@@ -23,6 +22,8 @@
  
 
 </div>
+
+@stop
 
 
 

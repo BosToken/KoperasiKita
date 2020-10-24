@@ -6,10 +6,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 
-@include('partials.user.navbar')
-<title>Dictionary</title>
-<form class="form-inline">
-@include('partials.user.page')
+@extends('partials.user.page')
+@section('title', 'Dictionary - Koperasi Z')
+@section('content')
+
 
 <table class="table " style="width: 1300px; height: 640px;">
     <thead>
@@ -85,3 +85,5 @@
 </div>
 </div>
 </form>
+
+@stop

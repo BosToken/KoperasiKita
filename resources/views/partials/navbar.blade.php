@@ -1,5 +1,5 @@
   <title>@yield('title')</title>
-<nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow">
+  <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
     <!-- Brand/logo -->
     <div class="container">
     <a class="navbar-brand" href="{{url('/')}}">@foreach($setting as $settings){{$settings->app_title}}@endforeach</a>
@@ -11,13 +11,13 @@
       <!-- Links -->
       <ul class="navbar-nav ml-auto" style="font-family: Arial, Helvetica, sans-serif; font-size: larger; color:white;">
         <li class="nav-item">
-          <a class="nav-link active" href="{{url('/')}}">HOME</a>
+          <a class="nav-link active" href="{{url('/')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url('/login')}}">LOGIN</a>
+          <a class="nav-link" href="{{url('/login')}}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url('/knowledge')}}">KNOWLEDGE</a>
+          <a class="nav-link" href="{{url('/knowledge')}}">Knowledge</a>
         </li>
       </ul>
     </div>
