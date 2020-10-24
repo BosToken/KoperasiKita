@@ -33,4 +33,7 @@ Route::get('admin/coa', 'AdminController@coa');
 
 Route::get('admin/admin/setting', 'AdminController@adminSetting');
 Route::put('admin/admin/setting/update/{id}', 'AdminController@updateadmin');
+Route::get('admin/user/setting', 'AdminController@userSetting');
+Route::delete('admin/user/setting/destroy-account/{id}', 'AdminController@userDelete');
+Route::put('admin/user/setting/update/{id}', 'AdminController@updateuser');
 

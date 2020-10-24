@@ -13,7 +13,7 @@ class User extends Model
         'email',
         'img_url',
     ];
-    public function users () {
-        return $this->hasMany('App\User');
+    public function roles () {
+        return $this->hasMany('App\Role');
     }
 }
