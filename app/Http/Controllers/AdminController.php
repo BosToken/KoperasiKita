@@ -65,9 +65,33 @@ class AdminController extends Controller
         return view('admin.data.coa', compact('user', 'coa', 'setting'));
     }
 
-
-
-    public function __construct(){
-        $this->middleware('cek_login');
+    public function coadestroy($id){
+        Coa::find($id)->delete();
+        return redirect()->action('AdminController@coa');
     }
+
+    public function updatecoa(Request $request, $id){
+        Coa::where('id', $id)->update([
+            'parent_id' => $request->parent_id,
+            'title' => $request->title,
+            'code' => $request->code,
+        ]);
+        return redirect()->action('AdminController@coa');
+    }
+
+    public function storecoa(Request $request)
+    {
+        $parent_id = $request->parent_id;
+        $title = $request->title;
+        $code = $request->code;
+
+        $coa = new Coa();
+        $coa->parent_id = $parent_id;
+        $coa->title = $title;
+        $coa->code = $code;
+        $coa->save();
+
+        return redirect()->action('AdminController@coa');
+    }
+
 }

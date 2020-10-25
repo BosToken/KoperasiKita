@@ -29,7 +29,11 @@ Route::get('user/profile', 'UserController@profile')->middleware(cek_login::clas
 Route::delete('user/destroy-account/{id}', 'UserController@destroy')->middleware(cek_login::class);
 
 Route::get('admin/dashboard', 'AdminController@dashboard')->middleware(cek_login::class);
+
 Route::get('admin/coa', 'AdminController@coa');
+Route::delete('admin/coa/destroy/{id}', 'AdminController@coadestroy');
+Route::put('/admin/coa/update/{id}', 'AdminController@updatecoa');
+Route::put('/admin/coa/store', 'AdminController@storecoa');
 
 Route::get('admin/admin/setting', 'AdminController@adminSetting');
 Route::put('admin/admin/setting/update/{id}', 'AdminController@updateadmin');
