@@ -64,4 +64,10 @@ class AdminController extends Controller
         $setting = AdminSetting::get();
         return view('admin.data.coa', compact('user', 'coa', 'setting'));
     }
+
+
+
+    public function __construct(){
+        $this->middleware('cek_login');
+    }
 }

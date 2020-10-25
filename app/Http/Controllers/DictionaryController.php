@@ -15,4 +15,10 @@ class DictionaryController extends Controller
         $setting = AdminSetting::get();
         return view('user.dictionary', compact('dictionary', 'user' , 'setting'));      
     }
+
+
+
+    public function __construct(){
+        $this->middleware('cek_login');
+    }
 }

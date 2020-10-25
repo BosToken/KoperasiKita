@@ -16,7 +16,6 @@
 		<link rel="stylesheet" href="{{ url('tes/css/style.css')}}">
 </head>
 <body>
-
 <div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar">
 				<div class="p-4 pt-5">
@@ -46,7 +45,11 @@
     <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
     <!-- Brand/logo -->
     <div class="container">
-    <a class="navbar-brand" href="{{url('/')}}">@foreach($setting as $settings){{$settings->app_title}}@endforeach</a>
+          <button type="button" id="sidebarCollapse" class="btn btn-primary" style="padding-left: 10px;">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button> 
+    <a class="navbar-brand" href="{{url('/')}}" style="padding-left: 80px;">@foreach($setting as $settings){{$settings->app_title}}@endforeach</a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -97,6 +100,10 @@
   <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
   <!-- Brand/logo -->
   <div class="container">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
   <a class="navbar-brand" href="{{url('/')}}">@foreach($setting as $settings){{$settings->app_title}}@endforeach</a>
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

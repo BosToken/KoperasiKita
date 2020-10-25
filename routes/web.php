@@ -22,13 +22,13 @@ Route::get('logout', 'UserController@logout');
 Route::post('register', 'UserController@store');
 Route::post('login/check', 'UserController@check');
 
-Route::get('user/dashboard', 'UserController@dashboard');
+Route::get('user/dashboard', 'UserController@dashboard')->middleware(cek_login::class);
 Route::get('user/dictionary', 'DictionaryController@index');
 Route::get('user/journal', 'JournalController@index');
-Route::get('user/profile', 'UserController@profile');
-Route::delete('user/destroy-account/{id}', 'UserController@destroy');
+Route::get('user/profile', 'UserController@profile')->middleware(cek_login::class);
+Route::delete('user/destroy-account/{id}', 'UserController@destroy')->middleware(cek_login::class);
 
-Route::get('admin/dashboard', 'AdminController@dashboard');
+Route::get('admin/dashboard', 'AdminController@dashboard')->middleware(cek_login::class);
 Route::get('admin/coa', 'AdminController@coa');
 
 Route::get('admin/admin/setting', 'AdminController@adminSetting');

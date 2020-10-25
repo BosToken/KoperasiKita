@@ -15,4 +15,11 @@ class JournalController extends Controller
         $setting = AdminSetting::get();
         return view('user.journal', compact('journal', 'user', 'setting'));      
     }
+
+
+
+
+    public function __construct(){
+        $this->middleware('cek_login');
+    }
 }
