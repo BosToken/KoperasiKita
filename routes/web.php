@@ -35,6 +35,20 @@ Route::delete('admin/coa/destroy/{id}', 'AdminController@coadestroy');
 Route::put('/admin/coa/update/{id}', 'AdminController@updatecoa');
 Route::put('/admin/coa/store', 'AdminController@storecoa');
 
+Route::get('admin/dictionary', 'AdminController@dictionary');
+Route::delete('admin/dictionary/destroy/{id}', 'AdminController@dictionarydestroy');
+Route::put('/admin/dictionary/update/{id}', 'AdminController@updatedictionary');
+Route::put('/admin/dictionary/store', 'AdminController@storedictionary');
+
+
+Route::get('admin/journal', 'AdminController@coa');
+
+Route::get('admin/system-log', 'AdminController@coa');
+
+Route::get('admin/post', 'AdminController@coa');
+
+Route::get('admin/transaction', 'AdminController@coa');
+
 Route::get('admin/admin/setting', 'AdminController@adminSetting');
 Route::put('admin/admin/setting/update/{id}', 'AdminController@updateadmin');
 Route::get('admin/user/setting', 'AdminController@userSetting');

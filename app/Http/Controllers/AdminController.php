@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\AdminSetting;
 use App\Coa;
+use App\Dictionary;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -92,6 +93,45 @@ class AdminController extends Controller
         $coa->save();
 
         return redirect()->action('AdminController@coa');
+    }
+
+    public function dictionary(){
+        $user = Session::get('user');
+        $dictionary = Dictionary::get();
+        $setting = AdminSetting::get();
+        return view('admin.data.dictionary', compact('user', 'dictionary', 'setting'));
+    }
+
+    public function dictionarydestroy($id){
+        Dictionary::find($id)->delete();
+        return redirect()->action('AdminController@dictionary');
+    }
+
+    public function updatedictionary(Request $request, $id){
+        Dictionary::where('id', $id)->update([
+            'title' => $request->title,
+            'body' => $request->body,
+            'formula' => $request->formula,
+            'type' => $request->type,
+        ]);
+        return redirect()->action('AdminController@dictionary');
+    }
+
+    public function storedictionary(Request $request)
+    {
+        $title = $request->title;
+        $body = $request->body;
+        $formula = $request->formula;
+        $type = $request->type;
+
+        $dictionary = new Dictionary();
+        $dictionary->title = $title;
+        $dictionary->body = $body;
+        $dictionary->formula = $formula;
+        $dictionary->type = $type;
+        $dictionary->save();
+
+        return redirect()->action('AdminController@dictionary');
     }
 
 }
