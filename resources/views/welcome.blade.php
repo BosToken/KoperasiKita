@@ -13,6 +13,7 @@
                 @endif
             </h1>
             <p class="card-text">THANKS SUPPORT MY WEBSITE.</p>
+            
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="SEARCH" aria-label="Recipient's username"
                     aria-describedby="button-addon2">

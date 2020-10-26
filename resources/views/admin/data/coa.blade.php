@@ -33,7 +33,7 @@
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
-                    <tr>
+                    <tr class="thead-dark">
                       <th>NO</th>
                       <th>Title</th>
                       <th>Code</th>
@@ -49,9 +49,9 @@
                 <tr>
                   <td>{{$no}}</td>
                   <td>{{$coas->title}}</td>
-                  <td>{{$coas->code}}</td>
+                  <td >{{$coas->code}}</td>
                   <td>
-                    <button data-toggle="modal" data-target="#edit{{$coas->id}}" class="btn btn-success" role="button" title="EDIT DATA"><i class="fas fa-edit"></i></button>
+                    <button data-toggle="modal" data-target="#edit{{$coas->id}}" class="btn btn-success" role="button" title="EDIT DATA"><i class="fas fa-edit"></i></button><hr>
                     <form action="{{url('/admin/coa/destroy', [$coas->id])}}" method="post" onclick = "return confirm('Do You Want To Destroy This Data?')">
                       @csrf
                       <input type="hidden" name="_method" value="DELETE">
@@ -67,7 +67,7 @@
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">ADD Coa</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">Add Coa</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="modal-footer mx-5 pt-3 mb-1">
                           <button type="dissmis" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-success">Save</button>
+                          <button type="submit" class="btn btn-success">Save</button>
                       </div>
                       </div>
                     </div>
