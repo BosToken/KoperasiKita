@@ -41,7 +41,10 @@ Route::put('/admin/dictionary/update/{id}', 'AdminController@updatedictionary');
 Route::put('/admin/dictionary/store', 'AdminController@storedictionary');
 
 
-Route::get('admin/journal', 'AdminController@coa');
+Route::get('admin/journal', 'AdminController@journal');
+Route::delete('admin/journal/destroy/{id}', 'AdminController@journaldestroy');
+Route::put('/admin/journal/update/{id}', 'AdminController@updatejournal');
+Route::put('/admin/journal/store', 'AdminController@storejournal');
 
 Route::get('admin/system-log', 'AdminController@coa');
 

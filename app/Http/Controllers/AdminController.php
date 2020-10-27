@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AdminSetting;
 use App\Coa;
 use App\Dictionary;
+use App\Journal;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -133,5 +134,43 @@ class AdminController extends Controller
 
         return redirect()->action('AdminController@dictionary');
     }
+    
+    public function journal(){
+        $user = Session::get('user');
+        $journal = Journal::get();
+        $setting = AdminSetting::get();
+        return view('admin.data.journal', compact('user', 'journal', 'setting'));
+    }
 
+    public function journaldestroy($id){
+        Journal::find($id)->delete();
+        return redirect()->action('AdminController@journal');
+    }
+
+    public function updatejournal(Request $request, $id){
+        Journal::where('id', $id)->update([
+            'title' => $request->title,
+            'body' => $request->body,
+            'discharge' => $request->discharge,
+            'credit' => $request->credit,
+        ]);
+        return redirect()->action('AdminController@journal');
+    }
+
+    public function storejournal(Request $request)
+    {
+        $title = $request->title;
+        $body = $request->body;
+        $discharge = $request->discharge;
+        $credit = $request->credit;
+
+        $journal = new Journal();
+        $journal->title = $title;
+        $journal->body = $body;
+        $journal->discharge = $discharge;
+        $journal->credit = $credit;
+        $journal->save();
+
+        return redirect()->action('AdminController@journal');
+    }
 }

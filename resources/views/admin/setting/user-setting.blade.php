@@ -33,6 +33,7 @@
                   <thead>
                     <tr>
                       <th>NO</th>
+                      <th>Image</th>
                       <th>Username</th>
                       <th>Contact</th>
                       <th>Email</th>
@@ -50,6 +51,7 @@
 
                 <tr>
                   <td>{{$no}}</td>
+                  <td><img src="{{$userroles->img_url}}" class="img logo rounded-circle mb-5" width="200" height="200" alt=""></td>
                   <td>{{$userroles->username}}</td>
                   <td>{{$userroles->contact}}</td>
                   <td>{{$userroles->email}}</td>

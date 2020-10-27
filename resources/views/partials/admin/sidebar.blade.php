@@ -96,7 +96,7 @@
       <a class="collapse-item" href="{{url('/user/dashboard')}}">User Dashboard </a>
 
       <h6 class="collapse-header"></h6>
-      <a class="collapse-item" href="{{url('/user/dashboard')}}">User Dictionary</a>
+      <a class="collapse-item" href="{{url('/user/dictionary')}}">User Dictionary</a>
 
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/user/journal')}}">User Journal</a>

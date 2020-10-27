@@ -3,7 +3,7 @@
 @section('container')
 
 
-<table class="table table-bordered table-hover " style="width: 1300px; height: 640px;">
+<table class="table table-bordered table-hover ">
     <thead class="thead-light">
       <tr>
         <th scope="col">No</th>
