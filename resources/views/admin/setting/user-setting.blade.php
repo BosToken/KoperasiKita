@@ -66,11 +66,11 @@
                         @if($userroles->role_id === "1")
                         <td>Can't Update</td>
                         @else
-                        <td><button type="submit" class="btn btn-outline-primary" data-toggle="modal" data-target="#edit{{$userroles->id}}">Edit</button> <hr>
+                        <td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#edit{{$userroles->id}}"><i class="fas fa-edit"></i></button> <hr>
                         <form action="{{url('/admin/user/setting/destroy-account', [$userroles->id])}}" method="post" onclick = "return confirm('Do You Want To Destroy This Account?')">
                             @csrf
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </form>
                         
                         </td>
