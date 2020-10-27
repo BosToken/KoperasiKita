@@ -19,7 +19,7 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Coa [Chart Of Account]</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">IKI JUMLAH COA</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$coa->count()}}</div>
           </div>
           <div class="col-auto">
             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -36,10 +36,10 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Dictionary</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">IKI BAHASA PIRO</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dictionary->count()}}</div>
           </div>
           <div class="col-auto">
-            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+            <i class="fas fa-comments fa-2x text-gray-300"></i>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Journal</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">IKI JOURNALE ENEK MACEM PIRO</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$journal->count()}}</div>
           </div>
           <div class="col-auto">
             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -70,10 +70,10 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Transaction</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">IKI JUMLAH TRANSCATION</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$transaction->count()}}</div>
           </div>
           <div class="col-auto">
-            <i class="fas fa-comments fa-2x text-gray-300"></i>
+            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
           </div>
         </div>
       </div>

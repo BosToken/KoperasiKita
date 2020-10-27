@@ -60,7 +60,11 @@ class AdminController extends Controller
     public function dashboard(){
         $user = Session::get('user');
         $setting = AdminSetting::get();
-        return view('admin.dashboard', compact('user' , 'setting'));
+        $journal = Journal::get();
+        $dictionary = Dictionary::get();
+        $coa = Coa::get();
+        $transaction = Transaction::get();
+        return view('admin.dashboard', compact('coa' , 'transaction' , 'journal' , 'dictionary' , 'user' , 'setting'));
     }
 
     public function coa(){
