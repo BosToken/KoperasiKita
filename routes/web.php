@@ -46,11 +46,20 @@ Route::delete('admin/journal/destroy/{id}', 'AdminController@journaldestroy');
 Route::put('/admin/journal/update/{id}', 'AdminController@updatejournal');
 Route::put('/admin/journal/store', 'AdminController@storejournal');
 
-Route::get('admin/system-log', 'AdminController@coa');
+Route::get('admin/system-log', 'AdminController@systemLog');
+Route::delete('admin/system-log/destroy/{id}', 'AdminController@systemLogdestroy');
+Route::put('/admin/system-log/update/{id}', 'AdminController@updatesystemLog');
+Route::put('/admin/system-log/store', 'AdminController@storesystemLog');
 
-Route::get('admin/post', 'AdminController@coa');
+Route::get('admin/post', 'AdminController@post');
+Route::delete('admin/post/destroy/{id}', 'AdminController@postdestroy');
+Route::put('/admin/post/update/{id}', 'AdminController@updatepost');
+Route::put('/admin/post/store', 'AdminController@storepost');
 
-Route::get('admin/transaction', 'AdminController@coa');
+Route::get('admin/transaction', 'AdminController@transaction');
+Route::delete('admin/transaction/destroy/{id}', 'AdminController@transactiondestroy');
+Route::put('/admin/transaction/update/{id}', 'AdminController@updatetransaction');
+Route::put('/admin/transaction/store', 'AdminController@storetransaction');
 
 Route::get('admin/admin/setting', 'AdminController@adminSetting');
 Route::put('admin/admin/setting/update/{id}', 'AdminController@updateadmin');

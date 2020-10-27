@@ -6,7 +6,10 @@ use App\AdminSetting;
 use App\Coa;
 use App\Dictionary;
 use App\Journal;
+use App\Post;
 use App\Role;
+use App\SystemLog;
+use App\Transaction;
 use App\User;
 use Illuminate\Http\Request;
 use Session;
@@ -172,5 +175,137 @@ class AdminController extends Controller
         $journal->save();
 
         return redirect()->action('AdminController@journal');
+    }
+
+    public function post(){
+        $user = Session::get('user');
+        $post = Post::get();
+        $setting = AdminSetting::get();
+        return view('admin.data.post', compact('user', 'post', 'setting'));
+    }
+
+    public function postdestroy($id){
+        Post::find($id)->delete();
+        return redirect()->action('AdminController@post');
+    }
+
+    public function updatepost(Request $request, $id){
+        Post::where('id', $id)->update([
+            'period' => $request->period,
+            'beginning_balance' => $request->beginning_balance,
+            'debit_mutation' => $request->debit_mutation,
+            'credit_mutation' => $request->credit_mutation,
+            'ending_balance' => $request->beginning_balance,
+        ]);
+        return redirect()->action('AdminController@post');
+    }
+
+    public function storepost(Request $request)
+    {
+        $period = $request->period;
+        $beginning_balance = $request->beginning_balance;
+        $debit_mutation = $request->debit_mutation;
+        $credit_mutation = $request->credit_mutation;
+        $ending_balance = $request->ending_balance;
+
+        $post = new Post();
+        $post->period = $period;
+        $post->beginning_balance = $beginning_balance;
+        $post->debit_mutation = $debit_mutation;
+        $post->credit_mutation = $credit_mutation;
+        $post->ending_balance = $ending_balance;
+        $post->save();
+
+        return redirect()->action('AdminController@post');
+    }
+
+    public function systemLog(){
+        $user = Session::get('user');
+        $systemlog = SystemLog::get();
+        $setting = AdminSetting::get();
+        return view('admin.data.system_log', compact('user', 'systemlog', 'setting'));
+    }
+
+    public function systemLogdestroy($id){
+        SystemLog::find($id)->delete();
+        return redirect()->action('AdminController@systemLog');
+    }
+
+    public function updatesystemLog(Request $request, $id){
+        SystemLog::where('id', $id)->update([
+            'event' => $request->event,
+            'num_transaction' => $request->num_transaction,
+            'num_evidence' => $request->num_evidence,
+            'body' => $request->body,
+            'operator' => $request->operator,
+        ]);
+        return redirect()->action('AdminController@systemLog');
+    }
+
+    public function storesystemLog(Request $request)
+    {
+        $event = $request->event;
+        $num_evidence = $request->num_evidence;
+        $num_transaction = $request->num_transaction;
+        $body = $request->body;
+        $operator = $request->operator;
+
+        $systemlog = new SystemLog();
+        $systemlog->event = $event;
+        $systemlog->num_evidence = $num_evidence;
+        $systemlog->num_transaction = $num_transaction;
+        $systemlog->body = $body;
+        $systemlog->operator = $operator;
+        $systemlog->save();
+
+        return redirect()->action('AdminController@systemLog');
+    }
+
+    public function transaction(){
+        $user = Session::get('user');
+        $transaction = Transaction::get();
+        $setting = AdminSetting::get();
+        return view('admin.data.transaction', compact('user', 'transaction', 'setting'));
+    }
+
+    public function transactiondestroy($id){
+        Transaction::find($id)->delete();
+        return redirect()->action('AdminController@transaction');
+    }
+
+    public function updatetransaction(Request $request, $id){
+        Transaction::where('id', $id)->update([
+            'num_evidence' => $request->num_evidence,
+            'type_transaction' => $request->type_transaction,
+            'dictionary_id' => $request->dictionary_id,
+            'body' => $request->body,
+            'amount' => $request->amount,
+            'operator' => $request->operator,
+            'status' => $request->status,
+        ]);
+        return redirect()->action('AdminController@transaction');
+    }
+
+    public function storetransaction(Request $request)
+    {
+        $num_evidence = $request->num_evidence;
+        $type_transaction = $request->type_transaction;
+        $dictionary_id = $request->dictionary_id;
+        $body = $request->body;
+        $amount = $request->amount;
+        $operator = $request->operator;
+        $status = $request->status;
+
+        $transaction = new Transaction();
+        $transaction->num_evidence = $num_evidence;
+        $transaction->type_transaction = $type_transaction;
+        $transaction->dictionary_id = $dictionary_id;
+        $transaction->body = $body;
+        $transaction->amount = $amount;
+        $transaction->operator = $operator;
+        $transaction->status = $status;
+        $transaction->save();
+
+        return redirect()->action('AdminController@transaction');
     }
 }
