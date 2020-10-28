@@ -9,7 +9,7 @@ return [
 
 "home" => "Beranda",
 "login" => "Gabung",
-"knowledge" => "Pengetahuan",
+"knowledge" => "FAQ",
 
 "joinedat" => "Bergabung di :",
 "adminpanel" => "Panel Admin",
@@ -94,7 +94,7 @@ return [
 
 "home" => "Home",
 "login" => "Login",
-"knowledge" => "Knowledge",
+"knowledge" => "FAQ",
 
 "joinedat" => "Joined At :",
 "adminpanel" => "Admin Panel",
@@ -179,7 +179,7 @@ return [
 
 "home" => "ホーム",
 "login" => "ログインする",
-"knowledge" => "知識",
+"knowledge" => "よくある質問",
 
 "joinedat" => "に参加 :",
 "adminpanel" => "管理パネル",
