@@ -89,4 +89,11 @@ class UserController extends Controller
         User::find($id)->delete();
         return redirect('/logout');
     }
+
+
+    public function knowledge(){
+        $user = Session::get('user');
+        $setting = AdminSetting::get();
+        return view('knowledge', compact('user', 'setting'));
+    }
 }

@@ -1,13 +1,18 @@
 @extends('partials.user.page')
 @section('title', 'Dashboard - Koperasi Z')
 @section('container')
-<script type='text/javascript'>
-$(document).ready(function()
-{$(&#39;a&#39;).hover(function() { //mouse in
-$(this).animate({ marginLeft: &#39;12px&#39; }, 400);}, function() 
-{ //mouse out $(this).animate({ marginLeft: 0 }, 400);});});</script>
-<marquee scrollamount="10">
-<font face="Times New Roman">
-<font style="font-size:1000%;"><b>WELCOME TO <b/>
-</b></font></font> </marquee>
+<div class="container">
+@if($user->role_id === "1")      
+    <center><h3>Welcome {{$user->username}} to this website you are logged in as admin here.</h3></center>
+@else
+    <center><h3>Welcome {{$user->username}} to this website you are logged in as user here.</h3></center>
+@endif
+</div>
+
+<style>
+    h3{
+        color :black;
+    }
+</style>
+
 @stop

@@ -1,5 +1,5 @@
 @extends('partials.navbar')
-@section('title', 'Koperasi Z')
+@section('title', 'Login Or Register - Koperasi Z')
 @section('content')
 
 

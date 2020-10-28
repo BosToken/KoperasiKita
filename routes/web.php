@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'UserController@index');
+Route::get('/knowledge', 'UserController@knowledge');
 
 //LOGIN//
 Route::get('login', 'UserController@login');

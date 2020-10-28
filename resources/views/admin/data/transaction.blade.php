@@ -1,5 +1,5 @@
 @extends('partials.admin.sidebar')
-@section('title', 'Chart Of Account - Koperasi Z')
+@section('title', 'Transaction - Koperasi Z')
 @section('container')
 
 <!-- Content Wrapper. Contains page content -->

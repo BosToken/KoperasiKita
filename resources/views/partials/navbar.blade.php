@@ -24,7 +24,9 @@
   </div>
   </nav>
   <body>
+  <div>
   @yield('content')
+  </div>
   </body>
 
   <footer id="footer" class="py-4 bg-dark text-white-50" style="width: 100%;position: absolute;bottom: 0px;">
