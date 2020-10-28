@@ -12,13 +12,31 @@
       <!-- Links -->
       <ul class="navbar-nav ml-auto" style="font-family: Arial, Helvetica, sans-serif; font-size: larger; color:white;">
         <li class="nav-item">
-          <a class="nav-link active" href="{{url('/')}}">Home</a>
+          <a class="nav-link active" href="{{url('/')}}">
+            @if($settings->lang === "en")@lang('lang.en.home')
+          @elseif($settings->lang === "id")@lang('lang.id.home')
+          @elseif($settings->lang === "jp")@lang('lang.jp.home')
+          @else Home
+          @endif
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url('/login')}}">Login</a>
+          <a class="nav-link" href="{{url('/login')}}">
+            @if($settings->lang === "en")@lang('lang.en.login')
+          @elseif($settings->lang === "id")@lang('lang.id.login')
+          @elseif($settings->lang === "jp")@lang('lang.jp.login')
+          @else Login
+          @endif
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url('/knowledge')}}">Knowledge</a>
+          <a class="nav-link" href="{{url('/knowledge')}}">
+            @if($settings->lang === "en")@lang('lang.en.knowledge')
+          @elseif($settings->lang === "id")@lang('lang.id.knowledge')
+          @elseif($settings->lang === "jp")@lang('lang.jp.knowledge')
+          @else Knowledge
+          @endif
+          </a>
         </li>
       </ul>
     </div>
