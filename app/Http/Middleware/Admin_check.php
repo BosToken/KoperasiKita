@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Session;
 
-class cek_login
+class Admin_check
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,15 @@ class cek_login
      */
     public function handle($request, Closure $next)
     {
-        if(Session::get('logged_in') == false) {
+        if(!Session::get('logged_in')){
             return redirect('/login');
+        } else {
+            if(Session::get('user')->role_id === '2') {
+                return redirect('/user/dashboard');
+            }
+            // if(Session::get('role')->name == 'User') {
+            //     return redirect('/client/panel/dashboard');
+            // }
         }
         return $next($request);
     }

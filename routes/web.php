@@ -29,42 +29,42 @@ Route::get('user/journal', 'JournalController@index');
 Route::get('user/profile', 'UserController@profile')->middleware(cek_login::class);
 Route::delete('user/destroy-account/{id}', 'UserController@destroy')->middleware(cek_login::class);
 
-Route::get('admin/dashboard', 'AdminController@dashboard')->middleware(cek_login::class);
+Route::get('admin/dashboard', 'AdminController@dashboard')->middleware(Admin_check::class);
 
-Route::get('admin/coa', 'AdminController@coa');
-Route::delete('admin/coa/destroy/{id}', 'AdminController@coadestroy');
-Route::put('/admin/coa/update/{id}', 'AdminController@updatecoa');
-Route::put('/admin/coa/store', 'AdminController@storecoa');
+Route::get('admin/coa', 'AdminController@coa')->middleware(Admin_check::class);
+Route::delete('admin/coa/destroy/{id}', 'AdminController@coadestroy')->middleware(Admin_check::class);
+Route::put('/admin/coa/update/{id}', 'AdminController@updatecoa')->middleware(Admin_check::class);
+Route::put('/admin/coa/store', 'AdminController@storecoa')->middleware(Admin_check::class);
 
-Route::get('admin/dictionary', 'AdminController@dictionary');
-Route::delete('admin/dictionary/destroy/{id}', 'AdminController@dictionarydestroy');
-Route::put('/admin/dictionary/update/{id}', 'AdminController@updatedictionary');
-Route::put('/admin/dictionary/store', 'AdminController@storedictionary');
+Route::get('admin/dictionary', 'AdminController@dictionary')->middleware(Admin_check::class);
+Route::delete('admin/dictionary/destroy/{id}', 'AdminController@dictionarydestroy')->middleware(Admin_check::class);
+Route::put('/admin/dictionary/update/{id}', 'AdminController@updatedictionary')->middleware(Admin_check::class);
+Route::put('/admin/dictionary/store', 'AdminController@storedictionary')->middleware(Admin_check::class);
 
 
-Route::get('admin/journal', 'AdminController@journal');
-Route::delete('admin/journal/destroy/{id}', 'AdminController@journaldestroy');
-Route::put('/admin/journal/update/{id}', 'AdminController@updatejournal');
-Route::put('/admin/journal/store', 'AdminController@storejournal');
+Route::get('admin/journal', 'AdminController@journal')->middleware(Admin_check::class);
+Route::delete('admin/journal/destroy/{id}', 'AdminController@journaldestroy')->middleware(Admin_check::class);
+Route::put('/admin/journal/update/{id}', 'AdminController@updatejournal')->middleware(Admin_check::class);
+Route::put('/admin/journal/store', 'AdminController@storejournal')->middleware(Admin_check::class);
 
-Route::get('admin/system-log', 'AdminController@systemLog');
-Route::delete('admin/system-log/destroy/{id}', 'AdminController@systemLogdestroy');
-Route::put('/admin/system-log/update/{id}', 'AdminController@updatesystemLog');
-Route::put('/admin/system-log/store', 'AdminController@storesystemLog');
+Route::get('admin/system-log', 'AdminController@systemLog')->middleware(Admin_check::class);
+Route::delete('admin/system-log/destroy/{id}', 'AdminController@systemLogdestroy')->middleware(Admin_check::class);
+Route::put('/admin/system-log/update/{id}', 'AdminController@updatesystemLog')->middleware(Admin_check::class);
+Route::put('/admin/system-log/store', 'AdminController@storesystemLog')->middleware(Admin_check::class);
 
-Route::get('admin/post', 'AdminController@post');
-Route::delete('admin/post/destroy/{id}', 'AdminController@postdestroy');
-Route::put('/admin/post/update/{id}', 'AdminController@updatepost');
-Route::put('/admin/post/store', 'AdminController@storepost');
+Route::get('admin/post', 'AdminController@post')->middleware(Admin_check::class);
+Route::delete('admin/post/destroy/{id}', 'AdminController@postdestroy')->middleware(Admin_check::class);
+Route::put('/admin/post/update/{id}', 'AdminController@updatepost')->middleware(Admin_check::class);
+Route::put('/admin/post/store', 'AdminController@storepost')->middleware(Admin_check::class);
 
-Route::get('admin/transaction', 'AdminController@transaction');
-Route::delete('admin/transaction/destroy/{id}', 'AdminController@transactiondestroy');
-Route::put('/admin/transaction/update/{id}', 'AdminController@updatetransaction');
-Route::put('/admin/transaction/store', 'AdminController@storetransaction');
+Route::get('admin/transaction', 'AdminController@transaction')->middleware(Admin_check::class);
+Route::delete('admin/transaction/destroy/{id}', 'AdminController@transactiondestroy')->middleware(Admin_check::class);
+Route::put('/admin/transaction/update/{id}', 'AdminController@updatetransaction')->middleware(Admin_check::class);
+Route::put('/admin/transaction/store', 'AdminController@storetransaction')->middleware(Admin_check::class);
 
-Route::get('admin/admin/setting', 'AdminController@adminSetting');
-Route::put('admin/admin/setting/update/{id}', 'AdminController@updateadmin');
-Route::get('admin/user/setting', 'AdminController@userSetting');
-Route::delete('admin/user/setting/destroy-account/{id}', 'AdminController@userDelete');
-Route::put('admin/user/setting/update/{id}', 'AdminController@updateuser');
+Route::get('admin/admin/setting', 'AdminController@adminSetting')->middleware(Admin_check::class);
+Route::put('admin/admin/setting/update/{id}', 'AdminController@updateadmin')->middleware(Admin_check::class);
+Route::get('admin/user/setting', 'AdminController@userSetting')->middleware(Admin_check::class);
+Route::delete('admin/user/setting/destroy-account/{id}', 'AdminController@userDelete')->middleware(Admin_check::class);
+Route::put('admin/user/setting/update/{id}', 'AdminController@updateuser')->middleware(Admin_check::class);
 

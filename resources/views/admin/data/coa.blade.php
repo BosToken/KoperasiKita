@@ -1,3 +1,4 @@
+@foreach($setting as $settings)
 @extends('partials.admin.sidebar')
 @section('title', 'Chart Of Account - Koperasi Z')
 @section('container')
@@ -7,7 +8,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <ol class="breadcrumb">
-        <li class="active">Admin - <span>COA [ Chart Of Account ]</span></li>
+        <li class="active"><span>
+          @if($settings->lang === "en")@lang('lang.en.coa')
+                @elseif($settings->lang === "id")@lang('lang.id.coa')
+                @elseif($settings->lang === "jp")@lang('lang.jp.coa')
+                @else COA [ Chart Of Account ]
+                @endif
+              </span></li>
       </ol>
     </section>
 
@@ -17,7 +24,13 @@
         <div class="col-xl-12">
       <div class="box box-primary">
         <div class="box-header">
-          <button data-toggle="modal" data-target="#add" class="btn btn-primary" role="button" title="Tambah Data"><i class="fas fa-plus"></i> ADD</button>
+          <button data-toggle="modal" data-target="#add" class="btn btn-primary" role="button" title="Tambah Data"><i class="fas fa-plus"></i> 
+            @if($settings->lang === "en")@lang('lang.en.add')
+                @elseif($settings->lang === "id")@lang('lang.id.add')
+                @elseif($settings->lang === "jp")@lang('lang.jp.add')
+                @else Add
+                @endif
+                </button>
           </div>
           @if(Session::get('alert_message'))
                 <div class="alert alert-success">
@@ -27,17 +40,49 @@
             <br>
             <div class="card shadow mb-5">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">COA [ Chart Of Account ]</h6>
+              <h6 class="m-0 font-weight-bold text-primary">
+                @if($settings->lang === "en")@lang('lang.en.coa')
+                @elseif($settings->lang === "id")@lang('lang.id.coa')
+                @elseif($settings->lang === "jp")@lang('lang.jp.coa')
+                @else COA [ Chart Of Account ]
+                @endif
+              </h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr class="thead-dark">
-                      <th>NO</th>
-                      <th>Title</th>
-                      <th>Code</th>
-                      <th text-align="center">Action</th>
+                      <th>
+                        @if($settings->lang === "en")@lang('lang.en.no')
+                @elseif($settings->lang === "id")@lang('lang.id.no')
+                @elseif($settings->lang === "jp")@lang('lang.jp.no')
+                @else No
+                @endif
+                </th>
+                      <th>
+                        @if($settings->lang === "en")@lang('lang.en.title')
+                @elseif($settings->lang === "id")@lang('lang.id.title')
+                @elseif($settings->lang === "jp")@lang('lang.jp.title')
+                @else Title
+                @endif
+                </th>
+                      <th>
+                        @if($settings->lang === "en")@lang('lang.en.code')
+                @elseif($settings->lang === "id")@lang('lang.id.code')
+                @elseif($settings->lang === "jp")@lang('lang.jp.code')
+                @else Code
+                @endif
+                </th>
+                      <th text-align="center">
+                        @if($settings->lang === "en")@lang('lang.en.action')
+                        @elseif($settings->lang === "id")@lang('lang.id.action')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.action')
+                        @else Action
+                        @endif
+                      </th>
+                      
+
                     </tr>
                   </thead>
                   <tbody>
@@ -67,7 +112,13 @@
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Add Coa</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            @if($settings->lang === "en")@lang('lang.en.add')
+                        @elseif($settings->lang === "id")@lang('lang.id.add')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.add')
+                        @else Add 
+                        @endif
+                         </h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -76,7 +127,12 @@
                           <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                  Parent_ID
+                                  @if($settings->lang === "en")@lang('lang.en.parent')
+                        @elseif($settings->lang === "id")@lang('lang.id.parent')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.parent')
+                        @else Parent ID 
+                        @endif
+                                  
                                   <input name="parent_id" type="parent_id" class="form-control" placeholder="Parent ID" required>
                                 </div>
                             </div>
@@ -84,7 +140,12 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                      Title
+                                      @if($settings->lang === "en")@lang('lang.en.title')
+                        @elseif($settings->lang === "id")@lang('lang.id.title')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.title')
+                        @else Title 
+                        @endif
+                                      
                                       <input name="title" type="title" class="form-control" placeholder="Title" required>
                                     </div>
                                 </div>
@@ -92,14 +153,25 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        Code
+                                      @if($settings->lang === "en")@lang('lang.en.code')
+                        @elseif($settings->lang === "id")@lang('lang.id.code')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.code')
+                        @else Code 
+                        @endif
+                                        
                                         <input name="code" type="code" class="form-control" placeholder="Code" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer mx-5 pt-3 mb-1">
-                          <button type="dissmis" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="dissmis" class="btn btn-secondary" data-dismiss="modal">
+                            @if($settings->lang === "en")@lang('lang.en.close')
+                        @elseif($settings->lang === "id")@lang('lang.id.close')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.close')
+                        @else Close 
+                        @endif
+                        </button>
                           <button type="submit" class="btn btn-success">Save</button>
                       </div>
                       </div>
@@ -114,7 +186,13 @@
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Edit Coa</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            @if($settings->lang === "en")@lang('lang.en.edit')
+                        @elseif($settings->lang === "id")@lang('lang.id.edit')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.edit')
+                        @else Edit 
+                        @endif
+                        </h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -123,7 +201,11 @@
                           <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                  Parent_ID
+                                  @if($settings->lang === "en")@lang('lang.en.parent')
+                        @elseif($settings->lang === "id")@lang('lang.id.parent')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.parent')
+                        @else Parent ID 
+                        @endif
                                     <input id = "parent_id" name="parent_id"  for="parent_id" type="parent_id" class="form-control" placeholder="{{$coas->parent_id}}" value="{{$coas->parent_id}}" >
                                 </div>
                             </div>
@@ -131,7 +213,12 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                      Title
+                                      @if($settings->lang === "en")@lang('lang.en.title')
+                        @elseif($settings->lang === "id")@lang('lang.id.title')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.title')
+                        @else Title 
+                        @endif
+                                      
                                         <input id = "title" name="title"  for="title" type="title" class="form-control" placeholder="{{$coas->title}}" value="{{$coas->title}}" >
                                     </div>
                                 </div>
@@ -139,15 +226,33 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        Code
+                                      @if($settings->lang === "en")@lang('lang.en.code')
+                        @elseif($settings->lang === "id")@lang('lang.id.code')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.code')
+                        @else Code 
+                        @endif
+
+                                        
                                         <input id = "code" name="code"  for="code" type="code" class="form-control" placeholder="{{$coas->code}}" value="{{$coas->code}}" >
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer mx-5 pt-3 mb-1">
-                          <button type="dissmis" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-success">Save</button>
+                          <button type="dissmis" class="btn btn-secondary" data-dismiss="modal">
+                            @if($settings->lang === "en")@lang('lang.en.close')
+                        @elseif($settings->lang === "id")@lang('lang.id.close')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.close')
+                        @else Close 
+                        @endif
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                          @if($settings->lang === "en")@lang('lang.en.save')
+                        @elseif($settings->lang === "id")@lang('lang.id.save')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.save')
+                        @else Save 
+                        @endif
+                        </button>
                       </div>
                       </div>
                     </div>
@@ -167,3 +272,4 @@
 </div>
 
 @stop
+@endforeach

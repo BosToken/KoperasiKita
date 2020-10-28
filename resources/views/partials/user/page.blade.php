@@ -1,4 +1,5 @@
 <!-- FITUR -->
+@foreach($setting as $settings)
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,19 +22,46 @@
 				<div class="p-4 pt-5">
           <a href="#"><img src="{{$user->img_url}}" class="img logo rounded-circle mb-5" width="200" height="200" alt=""></a>
           <h5 class="card-text text-center">{{$user->username}}</h5>
-          <p class="card-text text-center">Joined At : {{$user->created_at}}</p>
+          <p class="card-text text-center">
+            @if($settings->lang === "en")@lang('lang.en.joinedat')
+                  @elseif($settings->lang === "id")@lang('lang.id.joinedat')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.joinedat')
+                  @else Joined At :
+                  @endif {{$user->created_at}}</p>
 	        <ul class="list-unstyled components mb-3">
           <li>
-	              <a href="{{url('/user/dashboard')}}">Dashboard</a>
+                <a href="{{url('/user/dashboard')}}">
+                  @if($settings->lang === "en")@lang('lang.en.dashboard')
+                  @elseif($settings->lang === "id")@lang('lang.id.dashboard')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.dashboard')
+                  @else Dashboard
+                  @endif
+                </a>
 	          </li>
 	          <li>
-	              <a href="{{url('/user/dictionary')}}">Dictionary</a>
+                <a href="{{url('/user/dictionary')}}">
+                  @if($settings->lang === "en")@lang('lang.en.dictionary')
+                  @elseif($settings->lang === "id")@lang('lang.id.dictionary')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.dictionary')
+                  @else Dictionary
+                  @endif
+                </a>
 	          </li>
 	          <li>
-              <a href="{{url('/user/journal')}}">Journal</a>
+              <a href="{{url('/user/journal')}}">
+                  @if($settings->lang === "en")@lang('lang.en.journal')
+                  @elseif($settings->lang === "id")@lang('lang.id.journal')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.journal')
+                  @else Journal
+                  @endif</a>
 	          </li>
 	          <li>
-              <a href="{{url('/user/profile')}}">Profile</a>
+              <a href="{{url('/user/profile')}}">
+                  @if($settings->lang === "en")@lang('lang.en.profile')
+                  @elseif($settings->lang === "id")@lang('lang.id.profile')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.profile')
+                  @else Profile
+                  @endif</a>
 	          </li>
 	        </ul>
 	      </div>
@@ -49,7 +77,7 @@
               <i class="fa fa-bars"></i>
               <span class="sr-only">Toggle Menu</span>
             </button> 
-    <a class="navbar-brand" href="{{url('/')}}" style="padding-left: 80px;">@foreach($setting as $settings){{$settings->app_title}}@endforeach</a>
+    <a class="navbar-brand" href="{{url('/')}}" style="padding-left: 80px;">{{$settings->app_title}}</a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -58,13 +86,31 @@
       <!-- Links -->
       <ul class="navbar-nav ml-auto" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">
         <li class="nav-item">
-          <a class="nav-link active" href="{{url('/')}}">Home</a>
+          <a class="nav-link active" href="{{url('/')}}">
+                  @if($settings->lang === "en")@lang('lang.en.home')
+                  @elseif($settings->lang === "id")@lang('lang.id.home')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.home')
+                  @else Home
+                  @endif
+                </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url('/login')}}">Login</a>
+          <a class="nav-link" href="{{url('/login')}}">
+                  @if($settings->lang === "en")@lang('lang.en.login')
+                  @elseif($settings->lang === "id")@lang('lang.id.login')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.login')
+                  @else Login
+                  @endif
+                </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url('/knowledge')}}">Knowledge</a>
+          <a class="nav-link" href="{{url('/knowledge')}}">
+                  @if($settings->lang === "en")@lang('lang.en.knowledge')
+                  @elseif($settings->lang === "id")@lang('lang.id.knowledge')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.knowledge')
+                  @else Knowledge
+                  @endif
+                </a>
         </li>
       </ul>
       <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -83,10 +129,20 @@
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                   <span class="dropdown-item ">{{$user->username}}</span>
-                  <a class="dropdown-item" href="{{url('/admin/dashboard')}}"><i class="icon-envelope"></i> Admin Panel</a>
+                  <a class="dropdown-item" href="{{url('/admin/dashboard')}}"><i class="icon-envelope"></i>
+                    @if($settings->lang === "en")@lang('lang.en.adminpanel')
+                  @elseif($settings->lang === "id")@lang('lang.id.adminpanel')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.adminpanel')
+                  @else Admin Panel
+                  @endif</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{url('/logout')}}" data-toggle="modal" data-target="#logoutModal">
-                  Logout
+                  
+                  @if($settings->lang === "en")@lang('lang.en.logout')
+                  @elseif($settings->lang === "id")@lang('lang.id.logout')
+                  @elseif($settings->lang === "jp")@lang('lang.jp.logout')
+                  @else Logout
+                  @endif
                 </a>
               </div>
             </li>
@@ -113,13 +169,30 @@
     <!-- Links -->
     <ul class="navbar-nav ml-auto" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;">
       <li class="nav-item">
-        <a class="nav-link active" href="{{url('/')}}">Home</a>
+        <a class="nav-link active" href="{{url('/')}}">
+          @if($settings->lang === "en")@lang('lang.en.home')
+          @elseif($settings->lang === "id")@lang('lang.id.home')
+          @elseif($settings->lang === "jp")@lang('lang.jp.home')
+          @else home
+          @endif</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/login')}}">Login</a>
+        <a class="nav-link" href="{{url('/login')}}">
+          @if($settings->lang === "en")@lang('lang.en.login')
+          @elseif($settings->lang === "id")@lang('lang.id.login')
+          @elseif($settings->lang === "jp")@lang('lang.jp.login')
+          @else Login
+          @endif
+          </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/knowledge')}}">Knowledge</a>
+        <a class="nav-link" href="{{url('/knowledge')}}">
+          @if($settings->lang === "en")@lang('lang.en.knowledge')
+          @elseif($settings->lang === "id")@lang('lang.id.knowledge')
+          @elseif($settings->lang === "jp")@lang('lang.jp.knowledge')
+          @else Knowledge
+          @endif
+          </a>
       </li>
     </ul>
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -142,7 +215,12 @@
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
               <a class="dropdown-item" href="{{url('/logout')}}" data-toggle="modal" data-target="#logoutModal">
-                Logout
+                @if($settings->lang === "en")@lang('lang.en.logout')
+          @elseif($settings->lang === "id")@lang('lang.id.logout')
+          @elseif($settings->lang === "jp")@lang('lang.jp.logout')
+          @else Logout
+          @endif
+          
               </a>
             </div>
           </li>
@@ -197,3 +275,4 @@
 
 </body>
 </html>
+@endforeach
