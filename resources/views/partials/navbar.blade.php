@@ -1,8 +1,9 @@
+@foreach($setting as $settings)
   <title>@yield('title')</title>
   <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
     <!-- Brand/logo -->
     <div class="container">
-    <a class="navbar-brand" href="{{url('/')}}">@foreach($setting as $settings){{$settings->app_title}}@endforeach</a>
+    <a class="navbar-brand" href="{{url('/')}}">{{$settings->app_title}}</a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -31,7 +32,7 @@
 
   <footer id="footer" class="py-4 bg-dark text-white-50" style="width: 100%;position: absolute;bottom: 0px;">
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> Koperasi Z</a>
+    <a href="https://github.com/BosToken/KoperasiKita"> {{$settings->app_title}}</a>
   </div>
     </footer>
 
@@ -51,3 +52,4 @@
         });
     });
 </script>
+@endforeach

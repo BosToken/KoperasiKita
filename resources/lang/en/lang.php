@@ -77,6 +77,13 @@ return [
 "Amount" => "Jumlah",
 "Status" => "Status",
 
+"WELCOME" => "Selamat Datang",
+"THANKS SUPPORT MY WEBSITE" => "TERIMA KASIH DUKUNGAN SITUS WEB SAYA",
+"NEED HELP ?" => "BUTUH BANTUAN ?",
+"Search" => "Cari",
+"REQUEST TO LOGIN, PLEASE LOGIN" => "PERMINTAAN UNTUK LOGIN. SILAHKAN MASUK.",
+"OR" => "Atau",
+"REGISTER" => "Datar",
 ],
 
 "en" => [
@@ -153,7 +160,15 @@ return [
 "Type Transaction" => "Type Transaction",
 "ID Dictionary" => "ID Dictionary",
 "Amount" => "Amount",
-"Status	" => "Status",
+"Status" => "Status",
+
+"WELCOME" => "WELCOME",
+"THANKS SUPPORT MY WEBSITE" => "THANKS SUPPORT MY WEBSITE",
+"NEED HELP ?" => "NEED HELP ?",
+"Search" => "Search",
+"REQUEST TO LOGIN, PLEASE LOGIN" => "REQUEST TO LOGIN. PLEASE LOGIN.",
+"OR" => "OR",
+"REGISTER" => "Register",
 ],
 
 "jp" => [
@@ -230,7 +245,15 @@ return [
 "Type Transaction" => "トランザクションタイプ",
 "ID Dictionary" => "ID辞書",
 "Amount" => "量",
-"Status	" => "状態",
+"Status" => "状態",
+
+"WELCOME" => "ようこそ",
+"THANKS SUPPORT MY WEBSITE" => "私のウェブサイトをサポートしてくれてありがとう",
+"NEED HELP ?" => "助けが必要 ？",
+"Search" => "探す",
+"REQUEST TO LOGIN, PLEASE LOGIN" => "ログインをリクエストします。ログインしてください。",
+"OR" => "または",
+"REGISTER" => "登録",
 ]
 
 ];
