@@ -1,6 +1,7 @@
 # KoperasiKita
 
 {App}
+
 web to make it easier to add cooperative data. Add data using cooperative web, use the process of adding, reading, changing, destroying. there are two roles namely user and admin, user only has reading power and admin has all powers.
 
 {Fitur}
