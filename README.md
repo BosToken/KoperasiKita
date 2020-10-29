@@ -2,7 +2,7 @@
 
 {App}
 
-web to make it easier to add cooperative data. Add data using cooperative web, use the process of adding, reading, changing, destroying. there are two roles namely user and admin, user only has reading power and admin has all powers.
+web to make it easier to add cooperative data. Add data using cooperative web, use the process of adding, reading, changing, destroying. there are two roles namely user and admin, user has reading power, adding power and admin has all powers.
 
 {Fitur}
 - Initial view
@@ -23,5 +23,10 @@ web to make it easier to add cooperative data. Add data using cooperative web, u
 {Role}
 - Admin (Power = Yes)
 - User (Power = No)
+
+{Language}
+- Indonesia 
+- English 
+- Japanese
 
 ---PBBM Coorporation---
