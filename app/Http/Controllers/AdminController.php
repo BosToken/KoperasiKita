@@ -81,23 +81,32 @@ class AdminController extends Controller
 
     public function updatecoa(Request $request, $id){
         Coa::where('id', $id)->update([
+            'num_approximate' => $request->num_approximate,
             'parent_id' => $request->parent_id,
             'title' => $request->title,
             'code' => $request->code,
+            'headdet' => $request->headdet,
+            'dk' => $request->dk,
         ]);
         return redirect()->action('AdminController@coa');
     }
 
     public function storecoa(Request $request)
     {
+        $num_approximate = $request->num_approximate;
         $parent_id = $request->parent_id;
         $title = $request->title;
         $code = $request->code;
+        $headdet = $request->headdet;
+        $dk = $request->dk;
 
         $coa = new Coa();
+        $coa->num_approximate = $num_approximate;
         $coa->parent_id = $parent_id;
         $coa->title = $title;
         $coa->code = $code;
+        $coa->headdet = $headdet;
+        $coa->dk = $dk;
         $coa->save();
 
         return redirect()->action('AdminController@coa');

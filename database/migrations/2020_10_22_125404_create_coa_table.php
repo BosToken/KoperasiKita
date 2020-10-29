@@ -15,9 +15,12 @@ class CreateCoaTable extends Migration
     {
         Schema::create('coas', function (Blueprint $table) {
             $table->Increments('id');
+            $table->string('num_approximate');
             $table->string('parent_id');
             $table->string('title');
             $table->string('code');
+            $table->string('headdet');
+            $table->string('dk');
             $table->timestamps();
         });
     }

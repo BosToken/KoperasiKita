@@ -60,6 +60,20 @@
                 @else No
                 @endif
                 </th>
+                <th>
+                  @if($settings->lang === "en")@lang('lang.en.numap')
+          @elseif($settings->lang === "id")@lang('lang.id.numap')
+          @elseif($settings->lang === "jp")@lang('lang.jp.numap')
+          @else Number Approximate
+          @endif
+          </th>
+          <th>
+            @if($settings->lang === "en")@lang('lang.en.parent')
+    @elseif($settings->lang === "id")@lang('lang.id.parent')
+    @elseif($settings->lang === "jp")@lang('lang.jp.parent')
+    @else Parent ID
+    @endif
+    </th>
                       <th>
                         @if($settings->lang === "en")@lang('lang.en.title')
                 @elseif($settings->lang === "id")@lang('lang.id.title')
@@ -74,6 +88,8 @@
                 @else Code
                 @endif
                 </th>
+                <th>Headdet</th>
+                <th>DK</th>
                       <th text-align="center">
                         @if($settings->lang === "en")@lang('lang.en.action')
                         @elseif($settings->lang === "id")@lang('lang.id.action')
@@ -93,8 +109,12 @@
 
                 <tr>
                   <td>{{$no}}</td>
+                  <td>{{$coas->num_approximate}}</td>
+                  <td>{{$coas->parent_id}}</td>
                   <td>{{$coas->title}}</td>
                   <td >{{$coas->code}}</td>
+                  <td>{{$coas->headdet}}</td>
+                  <td>{{$coas->dk}}</td>
                   <td>
                     <button data-toggle="modal" data-target="#edit{{$coas->id}}" class="btn btn-success" role="button" title="EDIT DATA"><i class="fas fa-edit"></i></button><hr>
                     <form action="{{url('/admin/coa/destroy', [$coas->id])}}" method="post" onclick = "return confirm('Do You Want To Destroy This Data?')">
@@ -124,6 +144,18 @@
                           </button>
                         </div>
                         <div class="modal-body">
+                          <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                  @if($settings->lang === "en")@lang('lang.en.numap')
+          @elseif($settings->lang === "id")@lang('lang.id.numap')
+          @elseif($settings->lang === "jp")@lang('lang.jp.numap')
+          @else Number Approximate
+          @endif
+                                  <input name="num_approximate" type="num_approximate" class="form-control" placeholder="Number Approximate" required>
+                                </div>
+                            </div>
+                          </div>
                           <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -163,6 +195,22 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                    Headdet
+                                      <input name="headdet" type="headdet" class="form-control" placeholder="Headdet" required>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                  DK
+                                    <input name="dk" type="dk" class="form-control" placeholder="DK" required>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                         <div class="modal-footer mx-5 pt-3 mb-1">
                           <button type="dissmis" class="btn btn-secondary" data-dismiss="modal">
@@ -201,6 +249,18 @@
                           <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
+                                  @if($settings->lang === "en")@lang('lang.en.numap')
+                        @elseif($settings->lang === "id")@lang('lang.id.numap')
+                        @elseif($settings->lang === "jp")@lang('lang.jp.numap')
+                        @else Number Approximate 
+                        @endif
+                                    <input id = "num_approximate" name="num_approximate"  for="num_approximate" type="num_approximate" class="form-control" placeholder="{{$coas->num_approximate}}" value="{{$coas->num_approximate}}" >
+                                </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
                                   @if($settings->lang === "en")@lang('lang.en.parent')
                         @elseif($settings->lang === "id")@lang('lang.id.parent')
                         @elseif($settings->lang === "jp")@lang('lang.jp.parent')
@@ -230,13 +290,28 @@
                         @elseif($settings->lang === "id")@lang('lang.id.code')
                         @elseif($settings->lang === "jp")@lang('lang.jp.code')
                         @else Code 
-                        @endif
-
-                                        
+                        @endif  
                                         <input id = "code" name="code"  for="code" type="code" class="form-control" placeholder="{{$coas->code}}" value="{{$coas->code}}" >
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                    Headdet
+                                      <input id = "headdet" name="headdet"  for="headdet" type="headdet" class="form-control" placeholder="{{$coas->headdet}}" value="{{$coas->headdet}}" >
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                    DK
+                                      <input id = "dk" name="dk"  for="dk" type="dk" class="form-control" placeholder="{{$coas->dk}}" value="{{$coas->dk}}" >
+                                  </div>
+                              </div>
+                            </div>
+
                         </div>
                         <div class="modal-footer mx-5 pt-3 mb-1">
                           <button type="dissmis" class="btn btn-secondary" data-dismiss="modal">

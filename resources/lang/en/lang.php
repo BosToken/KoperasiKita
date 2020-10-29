@@ -84,6 +84,7 @@ return [
 "REQUEST TO LOGIN, PLEASE LOGIN" => "PERMINTAAN UNTUK LOGIN. SILAHKAN MASUK.",
 "OR" => "Atau",
 "REGISTER" => "Datar",
+"numap" => "Nomor Perkiraan",
 ],
 
 "en" => [
@@ -169,6 +170,8 @@ return [
 "REQUEST TO LOGIN, PLEASE LOGIN" => "REQUEST TO LOGIN. PLEASE LOGIN.",
 "OR" => "OR",
 "REGISTER" => "Register",
+
+"numap" => "Number Approximate",
 ],
 
 "jp" => [
@@ -254,6 +257,7 @@ return [
 "REQUEST TO LOGIN, PLEASE LOGIN" => "ログインをリクエストします。ログインしてください。",
 "OR" => "または",
 "REGISTER" => "登録",
+"numap" => "おおよその数",
 ]
 
 ];

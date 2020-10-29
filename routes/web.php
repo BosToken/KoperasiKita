@@ -24,8 +24,25 @@ Route::post('register', 'UserController@store');
 Route::post('login/check', 'UserController@check');
 
 Route::get('user/dashboard', 'UserController@dashboard')->middleware(cek_login::class);
-Route::get('user/dictionary', 'DictionaryController@index');
-Route::get('user/journal', 'JournalController@index');
+
+Route::get('user/coa', 'CoaController@index')->middleware(cek_login::class);
+Route::put('user/coa/store', 'CoaController@store')->middleware(cek_login::class);
+
+Route::get('user/system-log', 'SystemLogController@index')->middleware(cek_login::class);
+Route::put('user/system-log/store', 'SystemLogController@store')->middleware(cek_login::class);
+
+Route::get('user/post', 'PostController@index')->middleware(cek_login::class);
+Route::put('user/post/store', 'PostController@store')->middleware(cek_login::class);
+
+Route::get('user/transaction', 'TransactionController@index')->middleware(cek_login::class);
+Route::put('user/transaction/store', 'TransactionController@store')->middleware(cek_login::class);
+
+Route::get('user/dictionary', 'DictionaryController@index')->middleware(cek_login::class);
+Route::put('user/dictionary/store', 'DictionaryController@store')->middleware(cek_login::class);
+
+Route::get('user/journal', 'JournalController@index')->middleware(cek_login::class);
+Route::put('user/journal/store', 'JournalController@store')->middleware(cek_login::class);
+
 Route::get('user/profile', 'UserController@profile')->middleware(cek_login::class);
 Route::delete('user/destroy-account/{id}', 'UserController@destroy')->middleware(cek_login::class);
 

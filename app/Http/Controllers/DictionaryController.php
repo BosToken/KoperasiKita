@@ -16,4 +16,21 @@ class DictionaryController extends Controller
         return view('user.dictionary', compact('dictionary', 'user' , 'setting'));      
     }
 
+    public function store(Request $request)
+    {
+        $title = $request->title;
+        $body = $request->body;
+        $formula = $request->formula;
+        $type = $request->type;
+
+        $dictionary = new Dictionary();
+        $dictionary->title = $title;
+        $dictionary->body = $body;
+        $dictionary->formula = $formula;
+        $dictionary->type = $type;
+        $dictionary->save();
+
+        return redirect()->action('DictionaryController@index');
+    }
+
 }

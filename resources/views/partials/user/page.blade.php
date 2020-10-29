@@ -29,8 +29,8 @@
                   @else Joined At :
                   @endif {{$user->created_at}}</p>
 	        <ul class="list-unstyled components mb-3">
-          <li>
-                <a href="{{url('/user/dashboard')}}">
+            <li>
+              <a href="{{url('/user/dashboard')}}">
                   @if($settings->lang === "en")@lang('lang.en.dashboard')
                   @elseif($settings->lang === "id")@lang('lang.id.dashboard')
                   @elseif($settings->lang === "jp")@lang('lang.jp.dashboard')
@@ -38,6 +38,33 @@
                   @endif
                 </a>
 	          </li>
+          <li>
+              <a href="{{url('/user/coa')}}">
+                @if($settings->lang === "en")@lang('lang.en.coa')
+                @elseif($settings->lang === "id")@lang('lang.id.coa')
+                @elseif($settings->lang === "jp")@lang('lang.jp.coa')
+                @else Coa[Chart Of Account]
+                @endif
+              </a>
+          </li>
+          <li>
+            <a href="{{url('/user/post')}}">
+              @if($settings->lang === "en")@lang('lang.en.post')
+              @elseif($settings->lang === "id")@lang('lang.id.post')
+              @elseif($settings->lang === "jp")@lang('lang.jp.post')
+              @else Posting
+              @endif
+            </a>
+          </li>
+          <li>
+            <a href="{{url('/user/transaction')}}">
+              @if($settings->lang === "en")@lang('lang.en.transaction')
+              @elseif($settings->lang === "id")@lang('lang.id.transaction')
+              @elseif($settings->lang === "jp")@lang('lang.jp.transaction')
+              @else Transaction
+              @endif
+            </a>
+          </li>
 	          <li>
                 <a href="{{url('/user/dictionary')}}">
                   @if($settings->lang === "en")@lang('lang.en.dictionary')
@@ -55,6 +82,15 @@
                   @else Journal
                   @endif</a>
 	          </li>
+            <li>
+              <a href="{{url('/user/system-log')}}">
+                @if($settings->lang === "en")@lang('lang.en.systemlog')
+                @elseif($settings->lang === "id")@lang('lang.id.systemlog')
+                @elseif($settings->lang === "jp")@lang('lang.jp.systemlog')
+                @else System Log
+                @endif
+              </a>
+            </li>
 	          <li>
               <a href="{{url('/user/profile')}}">
                   @if($settings->lang === "en")@lang('lang.en.profile')
@@ -203,7 +239,7 @@
         <ul class="navbar-nav ml-auto">
           <div class="topbar-divider d-none d-sm-block"></div>
           <a class="navbar-brand" href="#">
-         <img src="{{$user->img_url}}" width="40" height="40" class="d-inline-block align-top" alt=""/> 
+         <img src="{{$user->img_url}}" width="40" height="40" class="rounded-circle" alt=""/> 
           </a>
 
           <!-- Nav Item - User Information -->
