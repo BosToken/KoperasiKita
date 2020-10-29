@@ -10,8 +10,12 @@ web to make it easier to add cooperative data. Add data using cooperative web, u
 - Login
 - Logout
 - Dashboard
+- Chart Of Account
 - Dictionary
 - Journal
+- Posting
+- Transaction
+- Posting
 - Profile
 - Admin Setting (Power)
 - User Setting (Power)
@@ -44,5 +48,26 @@ User Setting :
 - Password
 - Role
 - Destory User
+
+Data Setting :
+- Dashboard Admin
+- Chart Of Account {Create, Update, Read, Delete} 
+- Dictionary {Create, Update, Read, Delete} 
+- Journal {Create, Update, Read, Delete} 
+- Posting {Create, Update, Read, Delete} 
+- Transaction {Create, Update, Read, Delete} 
+- System Log {Create, Update, Read, Delete} 
+
+{USer Features}
+
+Data Setting : 
+- Dashboard User
+- Chart Of Account {Create, Read} 
+- Dictionary {Create, Read} 
+- Journal {Create, Read} 
+- Posting {Create, Read} 
+- Transaction {Create, Read} 
+- Profile {Delete Account}
+- System Log {Create, Read} 
 
 ---PBBM Coorporation---
