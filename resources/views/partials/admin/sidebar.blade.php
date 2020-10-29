@@ -173,6 +173,33 @@
           @endif
            </a>
 
+           <h6 class="collapse-header"></h6>
+           <a class="collapse-item" href="{{url('/user/coa')}}">
+            @if($settings->lang === "en")@lang('lang.en.coa')
+            @elseif($settings->lang === "id")@lang('lang.id.coa')
+            @elseif($settings->lang === "jp")@lang('lang.jp.coa')
+            @else Coa[Chart Of Account]
+            @endif
+          </a>
+
+          <h6 class="collapse-header"></h6>
+          <a class="collapse-item" href="{{url('/user/post')}}">
+            @if($settings->lang === "en")@lang('lang.en.post')
+            @elseif($settings->lang === "id")@lang('lang.id.post')
+            @elseif($settings->lang === "jp")@lang('lang.jp.post')
+            @else Posting
+            @endif
+          </a>
+
+          <h6 class="collapse-header"></h6>
+          <a class="collapse-item" href="{{url('/user/transaction')}}">
+            @if($settings->lang === "en")@lang('lang.en.transaction')
+            @elseif($settings->lang === "id")@lang('lang.id.transaction')
+            @elseif($settings->lang === "jp")@lang('lang.jp.transaction')
+            @else Transaction
+            @endif
+          </a>
+
       <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="{{url('/user/dictionary')}}">
         @if($settings->lang === "en")@lang('lang.en.dictionary')
@@ -189,6 +216,15 @@
           @elseif($settings->lang === "jp")@lang('lang.jp.journal')
           @else Journal
           @endif
+          </a>
+
+          <h6 class="collapse-header"></h6>
+          <a class="collapse-item" href="{{url('/user/system-log')}}">
+            @if($settings->lang === "en")@lang('lang.en.systemlog')
+            @elseif($settings->lang === "id")@lang('lang.id.systemlog')
+            @elseif($settings->lang === "jp")@lang('lang.jp.systemlog')
+            @else System Log
+            @endif
           </a>
 
       <h6 class="collapse-header"></h6>
